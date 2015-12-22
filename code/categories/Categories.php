@@ -47,7 +47,7 @@ class Categories
       $href = pq($value)->attr('href');
       $name = str_replace('<i></i>', '', pq($value)->text());
       if(strpos($name, '确定') === false && strpos($name, '取消') === false){
-        array_push($names, ['key'=> $href, 'value'=> $name]);
+        array_push($names, ['key'=> trim($href), 'value'=> trim($name)]);
       }
       if(count($names) >= $length) break;
     }

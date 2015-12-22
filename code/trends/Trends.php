@@ -20,7 +20,7 @@ class Trends{
     foreach ($a as $value) {
       $sku = pq($value)->attr('data-sku');
       if(strlen($sku) <= 7){
-        array_push($ids, $sku);
+        array_push($ids, trim($sku));
       }
 
       if(count($ids) >= $this->count) break;
@@ -35,7 +35,7 @@ class Trends{
   {
     $ids = [];
 
-    $urls = parse_url($url);
+    $urls = parse_url("{$url}&stock=0");
     $querys = $this->_getArrayByStr($urls['query']);
 
     $querys['page'] = 1;
@@ -90,7 +90,7 @@ class Trends{
     foreach ($a as $value) {
       $sku = pq($value)->attr('data-sku');
       if(strlen($sku) <= 7){
-        array_push($ids, $sku);
+        array_push($ids, trim($sku));
       }
       if(count($ids) >= $this->count) break;
     }

@@ -1,9 +1,8 @@
 <?php 
-error_reporting(0);
 set_time_limit(60);
 
+include '../App.php';
 include './Trends.php';
-include '../lib/utilities/dump.php';
 
 $id = $_POST['class'];
 $url = $_POST['url'];
@@ -25,7 +24,7 @@ $trends = new Trends($count);
  * dev mode
  */
 if($_GET['type'] === 'dev'){
-  dump($trends->getIdsByUrl('http://list.jd.com/list.html?cat=9987%2C653%2C655&ev=&page=1', 3));
+  dump($trends->getIdsByUrl('http://list.jd.com/list.html?cat=670%2C671%2C672&ev=11925_309146%40&page=1&JL=3_处理器_Intel i5', 5));
   exit();
 }
 

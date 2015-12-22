@@ -3,8 +3,7 @@
 /**
  * get class brands 
  */
-error_reporting(0);
-include '../lib/utilities/dump.php';
+include '../App.php';
 include './CommodityInfo.php';
 
 $id = $_GET['id'];
