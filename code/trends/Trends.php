@@ -15,7 +15,7 @@ class Trends{
   {
     $ids = [];
 
-    phpQuery::newDocumentFile("http://list.jd.com/list.html?cat={$id}&ev=exprice_M300");
+    phpQuery::newDocumentFile("http://list.jd.com/list.html?cat={$id}&ev=exprice_M300&delivery=1");
     $a = pq('#plist .gl-item div[data-sku]');
     foreach ($a as $value) {
       $sku = pq($value)->attr('data-sku');
@@ -35,7 +35,7 @@ class Trends{
   {
     $ids = [];
 
-    $urls = parse_url("{$url}&stock=0");
+    $urls = parse_url("{$url}&stock=0&delivery=1");
     $querys = $this->_getArrayByStr($urls['query']);
 
     $querys['page'] = 1;
